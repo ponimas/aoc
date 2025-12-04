@@ -1,0 +1,7 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/ponimas/pre-commit-nim
+    rev: ece7672470e836628a2091c37f4fe9327b3dc589
+    hooks:
+    -   id: nimpretty
