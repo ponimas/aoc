@@ -21,4 +21,23 @@ for ii in i:
             break
 print(c)
 
-# for 
+merged = set()
+n = []
+
+for i, (x, y) in enumerate(r):
+    if i in merged:
+        continue
+
+    for j in range(i+1, len(r)):
+        if y >= r[j][0]:
+            y = max(y, r[j][1])
+            # print(r[i], r[j])
+            merged.add(j)
+        else:
+            break
+    n.append((x, y))
+
+cc = 0
+for x, y in n:
+    cc += y - x + 1
+print(cc)
