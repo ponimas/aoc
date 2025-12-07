@@ -5,8 +5,7 @@ f = "in/5.txt"
 # f = "in/5.test.txt"
 
 r, i = open(f).read().strip().split("\n\n")
-r = [tuple(map(int, x.split("-")))
-     for x in r.split("\n")]
+r = [tuple(map(int, x.split("-"))) for x in r.split("\n")]
 i = [int(x) for x in i.split("\n")]
 
 r.sort()
@@ -28,7 +27,7 @@ for i, (x, y) in enumerate(r):
     if i in merged:
         continue
 
-    for j in range(i+1, len(r)):
+    for j in range(i + 1, len(r)):
         if y >= r[j][0]:
             y = max(y, r[j][1])
             # print(r[i], r[j])

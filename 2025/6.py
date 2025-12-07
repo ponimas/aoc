@@ -9,14 +9,16 @@ f = "in/6.txt"
 
 data = [l.split() for l in open(f).read().strip().split("\n")]
 
+
 def rotate(m):
     return zip(*m[::-1])
+
 
 s = 0
 for l in rotate(data):
     o, *nn = l
     op = operator.mul if o == "*" else operator.add
-    s += reduce(op,map(int, nn))
+    s += reduce(op, map(int, nn))
 
 print("first", s)
 
@@ -32,7 +34,7 @@ for l in open(f).read().strip().split("\n"):
     ll = []
     i = 0
     for mm in m:
-        ll.append(l[i:i+mm])
+        ll.append(l[i : i + mm])
         i += mm
         i += 1
     data.append(ll)
@@ -42,8 +44,6 @@ for l in rotate(data):
     o, *nn = l
     op = operator.mul if o.strip() == "*" else operator.add
     nn = [int("".join(x).strip() or "0") for x in rotate(nn)]
-    s += reduce(op,map(int, nn))
+    s += reduce(op, map(int, nn))
 
 print("second", s)
-        
-   
